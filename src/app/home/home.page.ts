@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as CS from '../cosmos-service';
+import * as Model from '../../models/todoItem';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  service: CS.CosmosService;
+  public things: Model.Todo[];
+  constructor() {
+    this.service = new CS.CosmosService();
+  }
 
+  async onRefresh() {
+    this.things = await this.service.listCollections();
+  }
 }
