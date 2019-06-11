@@ -1,9 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>NewTodo</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Thing</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input type="text" placeholder="Title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>done</ion-label>
+    <ion-checkbox slot="start"></ion-checkbox>
+  </ion-item>
+  <br />
+  <ion-button expand="full" class="ion-align-self-center">
+    Save
+  </ion-button>
 </ion-content>

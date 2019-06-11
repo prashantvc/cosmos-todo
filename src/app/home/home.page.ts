@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as CS from '../cosmos-service';
 import * as Model from '../../models/todoItem';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -17,5 +18,9 @@ export class HomePage {
 
   async onRefresh() {
     this.things = await this.service.listCollections();
+  }
+
+  onNewItem() {
+
   }
 }

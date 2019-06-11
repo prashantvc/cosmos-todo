@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="secondary">
       <ion-button (click)="onRefresh()">
         <ion-icon slot="icon-only" name="refresh"></ion-icon>
@@ -20,7 +20,7 @@
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button>
+  <ion-fab-button routerLink="/new-todo" routerDirection="forward">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>
