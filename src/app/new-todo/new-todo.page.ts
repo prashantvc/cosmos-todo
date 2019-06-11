@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as CS from '../cosmos-service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-new-todo',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTodoPage implements OnInit {
 
-  constructor() { }
+  service: CS.CosmosService;
+
+  public thing = { description: "", completed: false, userId: "pvc" };
+
+  constructor(private location: Location) {
+    this.service = CS.CosmosService.getInstance();
+  }
+
+  async onSave() {
+    await this.service.addItem(this.thing);
+    this.location.back();
+  }
 
   ngOnInit() {
   }
-
 }

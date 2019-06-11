@@ -3,8 +3,11 @@ import * as Cosmos from "@azure/cosmos";
 import * as Model from "../models/todoItem";
 
 export class CosmosService {
+
+    private static instance: CosmosService;
+
     private readonly cosmosHost = "<your_db>.documents.azure.com:443/";
-    private readonly primaryKey = "primary_key";
+    private readonly primaryKey = "<primary_key>";
     private readonly database = "ToDoList";
     private readonly collection = "Items";
 
@@ -48,5 +51,12 @@ export class CosmosService {
         console.log(`${this.items.length} items received`);
 
         return this.items;
+    }
+
+    public static getInstance(): CosmosService {
+        if (!CosmosService.instance)
+            CosmosService.instance = new CosmosService();
+
+        return CosmosService.instance;
     }
 }

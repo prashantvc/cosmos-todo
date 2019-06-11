@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import * as CS from '../cosmos-service';
 import * as Model from '../../models/todoItem';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +12,12 @@ export class HomePage {
   service: CS.CosmosService;
   public things: Model.Todo[];
   constructor() {
-    this.service = new CS.CosmosService();
+    this.service = CS.CosmosService.getInstance();
     this.onRefresh();
   }
 
   async onRefresh() {
-    
+
     // Design time data
     this.things = [
       { description: "Buy milk", completed: false, userId: "pvc" },
@@ -27,9 +26,5 @@ export class HomePage {
 
     //TODO: uncomment this to hook with cosmos
     //this.things = await this.service.listCollections();
-  }
-
-  onNewItem() {
-
   }
 }
