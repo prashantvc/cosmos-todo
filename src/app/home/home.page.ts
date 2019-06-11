@@ -14,10 +14,19 @@ export class HomePage {
   public things: Model.Todo[];
   constructor() {
     this.service = new CS.CosmosService();
+    this.onRefresh();
   }
 
   async onRefresh() {
-    this.things = await this.service.listCollections();
+    
+    // Design time data
+    this.things = [
+      { description: "Buy milk", completed: false, userId: "pvc" },
+      { description: "Paint garage", completed: true, userId: "pvc" }
+    ];
+
+    //TODO: uncomment this to hook with cosmos
+    //this.things = await this.service.listCollections();
   }
 
   onNewItem() {
