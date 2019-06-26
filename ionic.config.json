@@ -1,5 +1,7 @@
 {
   "name": "cosmos-todo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
