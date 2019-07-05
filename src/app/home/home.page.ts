@@ -19,12 +19,12 @@ export class HomePage {
   async onRefresh() {
 
     // Design time data
-    this.things = [
-      { description: "Buy milk", completed: false, userId: "pvc" },
-      { description: "Paint garage", completed: true, userId: "pvc" }
-    ];
+    // this.things = [
+    //   { description: "Buy milk", completed: false, userId: "pvc" },
+    //   { description: "Paint garage", completed: true, userId: "pvc" }
+    // ];
 
     //TODO: uncomment this to hook with cosmos
-    //this.things = await this.service.listCollections();
+    this.things = await this.service.listCollections();
   }
 }

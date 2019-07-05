@@ -6,8 +6,8 @@ export class CosmosService {
 
     private static instance: CosmosService;
 
-    private readonly cosmosHost = "<your_db>.documents.azure.com:443/";
-    private readonly primaryKey = "<primary_key>";
+    private readonly cosmosHost = "https://localhost:8081";
+    private readonly primaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
     private readonly database = "ToDoList";
     private readonly collection = "Items";
 
