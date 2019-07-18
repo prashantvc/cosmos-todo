@@ -19,7 +19,7 @@ export class CosmosService {
 
     constructor() {
         this.client = new Cosmos.CosmosClient({
-            endpoint: `https://${this.cosmosHost}`,
+            endpoint: this.cosmosHost,
             key: this.primaryKey,
             consistencyLevel: "Eventual",
             connectionPolicy: {
